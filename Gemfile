@@ -8,9 +8,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'better_errors'
-gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-linkedin'
 
+group :development do
+  gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'dotenv-rails'
+end
 
 group :production do
 

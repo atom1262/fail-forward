@@ -29,6 +29,8 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -38,6 +40,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    debug_inspector (0.0.2)
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
@@ -45,6 +48,7 @@ GEM
       dotenv (= 0.11.1)
     erubis (2.7.0)
     execjs (2.0.2)
+    hashie (2.1.1)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -60,6 +64,15 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.9.3)
+    oauth (0.4.7)
+    omniauth (1.2.1)
+      hashie (>= 1.2, < 3)
+      rack (~> 1.0)
+    omniauth-linkedin (0.1.0)
+      omniauth-oauth (~> 1.0)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -117,10 +130,13 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  binding_of_caller
   coffee-rails (~> 4.0.0)
   dotenv-rails
   jbuilder (~> 1.2)
   jquery-rails
+  omniauth
+  omniauth-linkedin
   pg
   rails (= 4.0.4)
   sass-rails (~> 4.0.2)
