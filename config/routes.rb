@@ -2,7 +2,7 @@ FailForward::Application.routes.draw do
 
   root 'homes#show'
 
-  resources :posts, only:[:index]
+  resources :posts, only:[:index, :new, :create, :show, :edit, :update, :destroy]
 
   match 'auth/:provider', as: 'signin', to: 'sessions#create', via: [:get, :post]
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
