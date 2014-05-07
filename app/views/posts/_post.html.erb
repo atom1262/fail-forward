@@ -1,0 +1,6 @@
+<li>
+  <%= link_to post.title, post %> <%= pluralize(post.comments.count, 'comment') %>
+  <% if !current_user.owns?(post) %>
+    submitted by <%= post.user.formatted_name %>
+  <% end %>
+</li>

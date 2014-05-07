@@ -2,9 +2,14 @@
 
 <%= link_to 'Add a New Post', new_post_path %>
 
-<% @posts.each do |post| %>
-  <ul>
-    <li> <%= link_to post.title, post_path(post) %> <%= pluralize(post.comments.count, 'comment') %> </li>
-    submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.first_name %>
-  </ul>
-<% end %>
+<h2><%= current_user.first_name %>'s Posts</h2>
+
+<%= render @user_posts %>
+
+<h2>Recent Posts</h2>
+
+<%= render @recent_posts %>
+
+<h2> Posts in the <%= current_user.industry.name %> Industry </h2>
+
+<%= render @industry_posts %>

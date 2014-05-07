@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
+      user.formatted_name = auth.info.name
+      user.picture_url = auth.info.image
       user.email_address = auth.info.email
-      user.industry = self.find_industry(auth.info.industry)
+      user.industry = find_industry(auth.info.industry)
       user.oauth_token = auth.credentials.token
       user.save!
     end
@@ -17,6 +19,10 @@ class User < ActiveRecord::Base
 
   def signed_in?
     true
+  end
+
+  def owns?(post)
+    id == post.user_id
   end
 
   private

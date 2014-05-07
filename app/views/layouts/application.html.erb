@@ -9,9 +9,10 @@
 <body>
 
   <% if current_user.signed_in? %>
+    <%= image_tag (current_user.picture_url) %>
     Welcome, <%= current_user.first_name %>
-      <%= link_to 'Sign out', signout_path %>
-      <%= link_to 'Home', posts_path %>
+    <%= link_to 'Sign out', signout_path %>
+    <%= link_to 'Home', posts_path %>
   <% else %>
       <%= link_to 'Sign in with LinkedIn', signin_path(:linkedin) %>
   <% end %>

@@ -6,4 +6,9 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   validates :user, presence: true
+
+  def self.recent
+    order(created_at: :desc).limit(5)
+  end
+
 end
