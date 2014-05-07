@@ -10,8 +10,10 @@
 
 <p>
   <strong>Posted by:</strong>
-  <img src="<%= @post.user.picture_url %>">
+  <%= image_tag (@post.user.picture_url) %>
   <%= @post.user.formatted_name %>
+</p>
+
 <p>
   <strong>Text:</strong>
   <%= @post.body %>
@@ -29,11 +31,6 @@
 <% end %>
 
 <div>
-  <% @comments.each do |comment| %>
-    <ul>
-      <li><%= comment.body %></li>
-      <img src="<%= comment.user.picture_url %>"><%= comment.user.formatted_name %> said <%= time_ago_in_words(comment.created_at) %> ago
-    </ul>
-  <% end %>
+  <%= render @comments %>
 </div>
 
