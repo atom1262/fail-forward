@@ -4,7 +4,7 @@
 
 <% @posts.each do |post| %>
   <ul>
-    <%= link_to post.title, post_path(post) %>
-    <%= post.industry.name %>
+    <li> <%= link_to post.title, post_path(post) %> <%= pluralize(post.comments.count, 'comment') %> </li>
+    submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.first_name %>
   </ul>
 <% end %>
