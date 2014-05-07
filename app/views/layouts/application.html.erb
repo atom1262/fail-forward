@@ -9,6 +9,7 @@
 <body>
 
   <% if current_user.signed_in? %>
+    <img src="<%= current_user.picture_url %>">
     Welcome, <%= current_user.first_name %>
       <%= link_to 'Sign out', signout_path %>
       <%= link_to 'Home', posts_path %>
