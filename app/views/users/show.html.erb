@@ -1,0 +1,7 @@
+<div>
+  <%= image_tag(@user.picture_url) %>
+  <h1><%= @user.formatted_name %>'s Fails in the <%= @industry.name %> Industry</h1>
+  <ul>
+    <%= render @posts %>
+  </ul>
+</div>
