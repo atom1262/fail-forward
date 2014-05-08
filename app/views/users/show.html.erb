@@ -1,0 +1,9 @@
+<div>
+  <%= image_tag (@user.picture_url) %>
+  <h1><%= @user.formatted_name %>'s Fails in the <%= @user.industry.name %> Industry</h1>
+  <% @posts.each do |post| %>
+    <ul>
+      <li><%= link_to post.title, post %></li>
+    </ul>
+  <% end %>
+</div>
