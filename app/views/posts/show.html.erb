@@ -19,9 +19,17 @@
   <%= @post.body %>
 </p>
 
+<p>
+  <strong>Gained Knowledge:</strong>
+  <ul>
+    <%= render @improvements %>
+  </ul>
+</p>
+
 <%= link_to 'Back', posts_path %>
-<%= link_to 'Edit Post', edit_post_path(@post) %>
 <%= link_to 'Delete Post', @post, method: :delete %>
+<%= link_to 'Edit Post', edit_post_path(@post) %>
+<%= link_to 'Have you gained knowledge from this experience?', new_post_improvement_path(@post) %>
 
 <h3>Comments</h3>
 
@@ -31,6 +39,8 @@
 <% end %>
 
 <div>
-  <%= render @comments %>
+  <ul>
+    <%= render @comments %>
+  </ul>
 </div>
 

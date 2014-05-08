@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  respond_to :html
 
   def index
     @user_posts = current_user.posts
@@ -12,13 +13,14 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    redirect_to (@post)
+    respond_with @post
   end
 
   def show
     @post = find_post
     @comment = Comment.new
     @comments = @post.comments.order(created_at: :desc)
+    @improvements = @post.improvements.order(created_at: :asc)
   end
 
   def edit
