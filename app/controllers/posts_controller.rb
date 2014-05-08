@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  respond_to :html
 
   def index
     @user_posts = current_user.posts
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    redirect_to (@post)
+    respond_with @post
   end
 
   def show

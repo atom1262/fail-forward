@@ -1,4 +1,5 @@
 class ImprovementsController < ApplicationController
+  respond_to :html
 
   def new
     @post = Post.find(params[:post_id])
@@ -6,9 +7,9 @@ class ImprovementsController < ApplicationController
   end
 
   def create
-    post = Post.find(params[:post_id])
-    post.improvements.create(improvement_params)
-    redirect_to post
+    @post = Post.find(params[:post_id])
+    @improvement = @post.improvements.create(improvement_params)
+    respond_with @improvement, location: @post
   end
 
   private

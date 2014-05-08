@@ -1,6 +1,7 @@
 <h1>Have you learned from this failure?</h1>
 
 <%= form_for ([@post, @improvement]) do |f| %>
+  <%= render 'error_messages', target: @improvement %>
   <%= f.text_area :body, placeholder: 'What have you learned?' %>
   <%= f.submit 'Share Knowledge' %>
 <% end %>

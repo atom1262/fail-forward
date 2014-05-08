@@ -21,7 +21,9 @@
 
 <p>
   <strong>Gained Knowledge:</strong>
-  <%= render @improvements %>
+  <ul>
+    <%= render @improvements %>
+  </ul>
 </p>
 
 <%= link_to 'Back', posts_path %>
@@ -37,6 +39,8 @@
 <% end %>
 
 <div>
-  <%= render @comments %>
+  <ul>
+    <%= render @comments %>
+  </ul>
 </div>
 

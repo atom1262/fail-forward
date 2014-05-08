@@ -1,12 +1,10 @@
 class CommentsController < ApplicationController
+  respond_to :html
 
   def create
-    post = Post.find(params[:post_id])
-    post.comments.create(comment_params)
-    redirect_to post
-  end
-
-  def show
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create(comment_params)
+    respond_with @post
   end
 
   private
