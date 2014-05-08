@@ -12,4 +12,8 @@ class Post < ActiveRecord::Base
     order(created_at: :desc).limit(5)
   end
 
+  def user_full_name
+    user.formatted_name
+  end
+
 end
