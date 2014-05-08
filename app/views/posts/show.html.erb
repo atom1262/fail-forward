@@ -5,13 +5,13 @@
 
 <p>
   <strong>Industry:</strong>
-  <%= @post.industry.name %>
+  <%= link_to @post.industry_name, @post.industry %>
 </p>
 
 <p>
   <strong>Posted by:</strong>
   <%= image_tag (@post.user.picture_url) %>
-  <%= @post.user.formatted_name %>
+  <%= @post.user_full_name %>
 </p>
 
 <p>
