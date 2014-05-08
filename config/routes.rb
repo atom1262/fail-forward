@@ -4,6 +4,7 @@ FailForward::Application.routes.draw do
 
   resources :posts, only:[:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only:[:new, :create, :show]
+    resources :improvements, only:[:new, :create, :show]
   end
 
   match 'auth/:provider', as: 'signin', to: 'sessions#create', via: [:get, :post]
