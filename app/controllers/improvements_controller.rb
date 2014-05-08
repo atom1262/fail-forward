@@ -11,9 +11,6 @@ class ImprovementsController < ApplicationController
     redirect_to post
   end
 
-  def show
-  end
-
   private
 
   def improvement_params

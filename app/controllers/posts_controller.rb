@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = find_post
     @comment = Comment.new
     @comments = @post.comments.order(created_at: :desc)
-    @improvements = Improvement.all
+    @improvements = @post.improvements.order(created_at: :asc)
   end
 
   def edit
