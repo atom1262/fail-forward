@@ -13,6 +13,8 @@
     Welcome, <%= current_user.first_name %>
     <%= link_to 'Sign out', signout_path %>
     <%= link_to 'Home', posts_path %>
+    Your Knowledge Score:
+    <strong><%= current_user.knowledge_score %></strong>
   <% else %>
       <%= link_to 'Sign in with LinkedIn', signin_path(:linkedin) %>
   <% end %>
