@@ -5,19 +5,31 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :improvements, through: :posts
 
- def self.from_omniauth(auth)
-   where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.first_name = auth.info.first_name
-      user.last_name = auth.info.last_name
-      user.formatted_name = auth.info.name
-      user.picture_url = auth.info.image
-      user.email_address = auth.info.email
-      user.industry = find_industry(auth.info.industry)
-      user.oauth_token = auth.credentials.token
-      user.save!
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.first_name = auth.info.first_name
+        user.last_name = auth.info.last_name
+        user.formatted_name = auth.info.name
+        user.picture_url = auth.info.image
+        user.email_address = auth.info.email
+        user.industry = find_industry(auth.info.industry)
+        user.oauth_token = auth.credentials.token
+        user.save!
+      end
     end
+
+  def post_score_multiplier
+    posts.count * 1.5
+  end
+
+  def improvement_score_multiplier
+    improvements.count * 2
+  end
+
+  def comment_score_multiplier
+    comments.count * 1
   end
 
   def signed_in?
@@ -42,7 +54,7 @@ class User < ActiveRecord::Base
   end
 
   def knowledge_score
-    ((posts.count) * (1.5)) + ((comments.count) * (1)) + ((improvements.count) * (2))
+    post_score_multiplier + comment_score_multiplier + improvement_score_multiplier
   end
 
   private

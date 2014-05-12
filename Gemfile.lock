@@ -152,7 +152,6 @@ DEPENDENCIES
   omniauth-linkedin
   pg
   rails (= 4.0.4)
-  sass
   sass-rails (~> 4.0.2)
   sdoc
   turbolinks
