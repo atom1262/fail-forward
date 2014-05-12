@@ -10,6 +10,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'omniauth'
 gem 'omniauth-linkedin'
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
 
 group :development do
   gem 'binding_of_caller'
