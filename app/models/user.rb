@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :improvements, through: :posts
 
+  POST_COUNT_MULTIPLIER = 1.5
+  COMMENT_COUNT_MULTIPLIER = 1
+  IMPROVEMENT_COUNT_MULTIPLIER = 2
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
         user.provider = auth.provider
@@ -19,18 +23,6 @@ class User < ActiveRecord::Base
         user.save!
       end
     end
-
-  def post_score_multiplier
-    posts.count * 1.5
-  end
-
-  def improvement_score_multiplier
-    improvements.count * 2
-  end
-
-  def comment_score_multiplier
-    comments.count * 1
-  end
 
   def signed_in?
     true
@@ -54,13 +46,25 @@ class User < ActiveRecord::Base
   end
 
   def knowledge_score
-    post_score_multiplier + comment_score_multiplier + improvement_score_multiplier
+    post_score + comment_score + improvement_score
   end
 
   private
 
   def self.find_industry(industry)
     Industry.find_or_create_by(name: industry)
+  end
+
+  def post_score
+    posts.count * POST_COUNT_MULTIPLIER
+  end
+
+  def improvement_score
+    improvements.count * IMPROVEMENT_COUNT_MULTIPLIER
+  end
+
+  def comment_score
+    comments.count * COMMENT_COUNT_MULTIPLIER
   end
 
 end
