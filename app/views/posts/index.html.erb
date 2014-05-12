@@ -2,20 +2,26 @@
 
 <%= link_to 'Add a New Post', new_post_path %>
 
-<h2><%= current_user.first_name %>'s Posts</h2>
+<h2><%= current_user.first_name %>'s Fails</h2>
 
 <ul>
   <%= render @user_posts %>
 </ul>
 
-<h2>Recent Posts</h2>
+<h2>Recent Fails</h2>
 
 <ul>
   <%= render @recent_posts %>
 </ul>
 
-<h2> Posts in the <%= current_user.industry.name %> Industry </h2>
+<h2> Fails in the <%= current_user.industry.name %> Industry </h2>
 
 <ul>
   <%= render @industry_posts %>
+</ul>
+
+<h2><%= current_user.first_name %>'s Followed Fails</h2>
+
+<ul>
+  <%= render @followed_posts %>
 </ul>

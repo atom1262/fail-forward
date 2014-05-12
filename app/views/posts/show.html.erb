@@ -1,6 +1,9 @@
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
+  <div id="follow_button">
+    <%= button_to 'Follow Fail', follow_post_path, remote: true %>
+  </div>
 </p>
 
 <p>
