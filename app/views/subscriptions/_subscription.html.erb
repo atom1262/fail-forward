@@ -1,6 +1,6 @@
 <li>
   <%= link_to subscription.post.title, subscription.post %> <%= pluralize(subscription.post.comments.count, 'comment') %>
   <% if !current_user.owns?(subscription.post) %>
-    submitted by <%= link_to subscription.post.user_full_name, user_path(subscription.post.user) %>
+    submitted by <%= link_to subscription.post.user_full_name, subscription.post.user %>
   <% end %>
 </li>
