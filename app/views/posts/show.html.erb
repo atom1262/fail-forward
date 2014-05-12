@@ -1,6 +1,9 @@
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
+  <div id="subscribe_button">
+    <%= button_to 'Subscribe to Fail', subscribe_post_path, remote: true %>
+  </div>
 </p>
 
 <p>

@@ -9,6 +9,10 @@ FailForward::Application.routes.draw do
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: [:new, :create]
     resources :improvements, only: [:new, :create]
+    member do
+      post "subscribe" => "subscriptions#create"
+      delete "unsubscribe" => "subscriptions#destroy"
+    end
   end
 
   match 'auth/:provider', as: 'signin', to: 'sessions#create', via: [:get, :post]
