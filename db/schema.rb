@@ -27,16 +27,6 @@ ActiveRecord::Schema.define(version: 20140508211250) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "follows", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "follows", ["post_id"], name: "index_follows_on_post_id", using: :btree
-  add_index "follows", ["user_id"], name: "index_follows_on_user_id", using: :btree
-
   create_table "improvements", force: true do |t|
     t.text     "body",       null: false
     t.integer  "post_id",    null: false
@@ -61,6 +51,16 @@ ActiveRecord::Schema.define(version: 20140508211250) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "subscriptions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subscriptions", ["post_id"], name: "index_subscriptions_on_post_id", using: :btree
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider",       null: false

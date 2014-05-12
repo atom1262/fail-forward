@@ -10,8 +10,8 @@ FailForward::Application.routes.draw do
     resources :comments, only: [:new, :create]
     resources :improvements, only: [:new, :create]
     member do
-      post "follow" => "follows#create"
-      delete "unfollow" => "follows#destroy"
+      post "subscribe" => "subscriptions#create"
+      delete "unsubscribe" => "subscriptions#destroy"
     end
   end
 

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @user_posts = current_user.posts
     @recent_posts = Post.all.recent
     @industry_posts = current_user.industry.posts
-    @followed_posts = current_user.follows
+    @subscribed_posts = current_user.subscriptions
   end
 
   def new

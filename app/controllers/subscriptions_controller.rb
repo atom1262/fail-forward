@@ -1,13 +1,13 @@
-class FollowsController < ApplicationController
+class SubscriptionsController < ApplicationController
 
   def create
     post = find_post
-    current_user.follow(post)
+    current_user.subscribe(post)
   end
 
   def destroy
     post = find_post
-    current_user.unfollow(post)
+    current_user.unsubscribe(post)
   end
 
   private

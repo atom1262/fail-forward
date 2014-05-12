@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   belongs_to :industry
   has_many :posts, dependent: :destroy
-  has_many :follows
+  has_many :subscriptions
 
  def self.from_omniauth(auth)
    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -26,17 +26,17 @@ class User < ActiveRecord::Base
     id == post.user_id
   end
 
-  def follow(post)
-    follows.create(post: post)
+  def subscribe(post)
+    subscriptions.create(post: post)
   end
 
-  def unfollow(post)
-    follow = follows.find_by(post: post)
-    follow.destroy
+  def unsubscribe(post)
+    subscription = subscriptions.find_by(post: post)
+    subscription.destroy
   end
 
-  def follows?(post)
-    follows.exists?(post:post)
+  def subscribes?(post)
+    subscriptions.exists?(post:post)
   end
 
   private
