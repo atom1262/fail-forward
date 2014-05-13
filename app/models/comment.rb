@@ -1,11 +1,12 @@
 class Comment < ActiveRecord::Base
+
+  COMMENTS_PER_PAGE = 3
+
   belongs_to :user
   belongs_to :post
 
   validates :body, presence: true
   validates :user, presence: true
-
-  COMMENTS_PER_PAGE = 3
 
   def self.recent
     order(created_at: :desc)

@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   respond_to :html
 
-  COMMENTS_PER_PAGE = 3
-
   def index
     @user_posts = current_user.posts
     @recent_posts = Post.all.recent
