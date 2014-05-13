@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
   respond_to :html
 
+  COMMENTS_PER_PAGE = 3
+
   def index
     @user_posts = current_user.posts
     @recent_posts = Post.all.recent
     @industry_posts = current_user.industry.posts
     @subscribed_posts = current_user.subscriptions
-    @posts = Post.recent.page(params[:page]).per(2)
   end
 
   def new
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
   def show
     @post = find_post
     @comment = Comment.new
-    @comments = @post.comments.recent.page(params[:page]).per(2)
+    @comments = @post.comments.recent.page(params[:page]).per(COMMENTS_PER_PAGE)
     @improvements = @post.improvements.order(created_at: :asc)
   end
 

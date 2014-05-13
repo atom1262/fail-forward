@@ -1,9 +1,9 @@
-<h1>FailForward Signed-in Homepage</h1>
-
-<div>
-  <%= link_to 'Add a New Post', new_post_path %>
-</div>
+<h1>Fail Forward</h1>
 
 <div>
   <%= render 'refills/vertical_tabs' %>
+</div>
+
+<div>
+  <%= button_to 'Add a New Post', new_post_path, method: :get %>
 </div>
