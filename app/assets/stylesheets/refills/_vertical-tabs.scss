@@ -2,10 +2,10 @@
   $tab-border-color: $base-border-color;
   $tab-border: 1px solid $tab-border-color;
   $tab-border-radius: $base-border-radius;
-  $tab-content-background: lighten($tab-border-color, 10);
+  $tab-content-background: lighten($tab-border-color, 5);
   $tab-active-color: $tab-content-background;
   $tab-inactive-color: $base-body-color;
-  $vertical-tabs-height: em(300);
+  $vertical-tabs-height: em(190);
   $vertical-tab-mode: $medium-screen;
 
   @include clearfix;
@@ -42,15 +42,15 @@
   }
 
   .vertical-tab:focus {
-    outline: none; 
+    outline: none;
   }
 
   .vertical-tab-content-container {
     display: block;
     margin: 0 auto;
 
-    & a:focus { 
-      outline: none; 
+    & a:focus {
+      outline: none;
     }
 
     @include media($vertical-tab-mode) {
