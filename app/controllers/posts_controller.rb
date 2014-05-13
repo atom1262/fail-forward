@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def show
     @post = find_post
     @comment = Comment.new
-    @comments = @post.comments.recent.page(params[:page]).per(COMMENTS_PER_PAGE)
+    @comments = @post.comments.paginated(params[:page])
     @improvements = @post.improvements.order(created_at: :asc)
   end
 
