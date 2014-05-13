@@ -1,27 +1,9 @@
 <h1>FailForward Signed-in Homepage</h1>
 
-<%= link_to 'Add a New Post', new_post_path %>
+<div>
+  <%= link_to 'Add a New Post', new_post_path %>
+</div>
 
-<h2><%= current_user.first_name %>'s Fails</h2>
-
-<ul>
-  <%= render @user_posts %>
-</ul>
-
-<h2>Recent Fails</h2>
-
-<ul>
-  <%= render @recent_posts %>
-</ul>
-
-<h2> Fails in the <%= current_user.industry.name %> Industry </h2>
-
-<ul>
-  <%= render @industry_posts %>
-</ul>
-
-<h2>Fails <%= current_user.first_name %> Subscribes To</h2>
-
-<ul>
-  <%= render @subscribed_posts %>
-</ul>
+<div>
+  <%= render 'refills/vertical_tabs' %>
+</div>
