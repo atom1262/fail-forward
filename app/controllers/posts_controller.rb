@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @recent_posts = Post.all.recent
     @industry_posts = current_user.industry.posts
     @subscribed_posts = current_user.subscriptions
+    @posts = Post.recent.page(params[:page]).per(2)
   end
 
   def new
@@ -20,7 +21,7 @@ class PostsController < ApplicationController
   def show
     @post = find_post
     @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @post.comments.recent.page(params[:page]).per(2)
     @improvements = @post.improvements.order(created_at: :asc)
   end
 

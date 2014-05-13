@@ -14,6 +14,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'refills'
+gem 'kaminari'
 
 group :development do
   gem 'binding_of_caller'
