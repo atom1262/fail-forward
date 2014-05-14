@@ -85,6 +85,13 @@ header.navigation {
     }
   }
 
+  #signout-button {
+    display: inline;
+    text-align: right;
+    line-height: 450%;
+    font-color: rgb(255,255,255);
+  }
+
   ul li {
     background: $navigation-background;
     display: block;

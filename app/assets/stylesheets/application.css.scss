@@ -26,3 +26,80 @@
 #post_body {
   width: 50%;
 }
+
+#comment_body {
+  padding-top: 10px;
+  width: 50%;
+}
+
+#comment_button {
+}
+
+#title {
+  font-size: 20px;
+  float: left;
+  width: 25%;
+}
+
+#industry {
+  font-size: 20px;
+  float: left;
+  width: 25%;
+}
+
+#author {
+  font-size: 20px;
+  float: left;
+  width: 27%;
+}
+
+#subscribe_button {
+  float: left;
+  width: 40%;
+}
+
+#fail {
+  float: left;
+  padding-left: 10px;
+  width: 48%;
+  height: 300px;
+  padding-left: 25px;
+  background-color: rgb(208,208,208);
+  overflow: auto;
+}
+
+#knowledge {
+  float: right;
+  padding-left: 25px;
+  padding-right: 10px;
+  width: 48%;
+  height: 300px;
+  background-color: rgb(208,208,208);
+  overflow: auto;
+}
+
+#delete_button {
+  float: left;
+  width: 34%;
+}
+
+#edit_button {
+  float: left;
+  @include shift(1);
+  width: 9%;
+}
+
+#knowledge_button {
+  float: left;
+  width: 40%;
+}
+
+#improvement_body {
+  width: 60%;
+}
+
+#share_button {
+}
+
+#signin_button {
+}

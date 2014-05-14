@@ -48,6 +48,7 @@
   .vertical-tab-content-container {
     display: block;
     margin: 0 auto;
+    overflow: auto;
 
     & a:focus {
       outline: none;

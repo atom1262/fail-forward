@@ -8,15 +8,10 @@
       <ul id="navigation-menu">
         <li class="nav-link"><%= link_to "Welcome, #{current_user.first_name}", posts_path %> </li>
         <li class="nav-link"><%= link_to "Your Knowledge Score: #{current_user.knowledge_score}" %></li>
-        <li class="nav-link"><%= link_to "Sign Out", signout_path %></li>
-          </ul>
-        </li>
       </ul>
     </div>
-    <div class="navigation-tools">
-      <div class="search-bar">
-      </div>
-      <a href="javascript:void(0)" class="sign-up">Sign Up</a>
+    <div id="signout-button">
+      <li class="nav-link"><%= link_to "Sign Out", signout_path %></li>
     </div>
   </div>
 </header>

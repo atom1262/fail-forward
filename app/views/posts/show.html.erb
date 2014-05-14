@@ -1,47 +1,54 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-  <div id="subscribe_button">
-    <%= button_to 'Subscribe to Fail', subscribe_post_path, remote: true %>
-  </div>
-</p>
 
-<p>
+<div id="author">
+  <strong>Author:</strong>
+  <%= link_to @post.user_full_name, @post.user %>
+</div>
+
+<div id="industry">
   <strong>Industry:</strong>
   <%= link_to @post.industry_name, @post.industry %>
-</p>
+</div>
 
-<p>
-  <strong>Posted by:</strong>
-  <%= image_tag (@post.user.picture_url) %>
-  <%= @post.user_full_name %>
-</p>
+<div id="subscribe_button">
+  <%= button_to 'Subscribe to this Fail', subscribe_post_path, remote: true %>
+</div>
 
-<p>
-  <strong>Text:</strong>
+<div id="fail">
+  <p> <strong> <%= @post.title %> </strong> </p>
   <%= @post.body %>
-</p>
+</div>
 
-<p>
-  <strong>Gained Knowledge:</strong>
+<div id="knowledge">
+  <p> <strong>What I Have Learned</strong> </p>
   <ul>
     <%= render @improvements %>
   </ul>
-</p>
+</div>
 
-<%= link_to 'Back', posts_path %>
-<% if current_user.owns?(@post) %>
-  <%= link_to 'Delete Post', @post, method: :delete %>
-  <%= link_to 'Edit Post', edit_post_path(@post) %>
-  <%= link_to 'Have you gained knowledge from this experience?', new_post_improvement_path(@post) %>
-<% end %>
+<div>
+  <% if current_user.owns?(@post) %>
+    <div id="delete_button">
+      <%= button_to 'Delete', @post, method: :delete %>
+    </div>
+    <div id="edit_button">
+      <%= button_to 'Edit', edit_post_path(@post), method: :get %>
+    </div>
+    <div id="knowledge_button">
+      <%= button_to 'Add Knowledge', new_post_improvement_path(@post), method: :get %>
+    </div>
+  <% end %>
+</div>
 
-<h3>Comments</h3>
-
-<%= form_for ([@post, @comment]) do |f| %>
-  <%= f.text_area :body, placeholder: 'Type Comment' %>
-  <%= f.submit 'Submit Comment' %>
-<% end %>
+<div id="comment_wrapper">
+  <div id="comment_body">
+    <%= form_for ([@post, @comment]) do |f| %>
+      <%= f.text_area :body, placeholder: 'Type Comment' %>
+      <div id="comment_button">
+        <%= f.submit 'Comment' %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <div>
   <ul>
