@@ -11,7 +11,7 @@
 <% if !current_user.owns?(@post) %>
   <% if current_user.subscribes?(@post) %>
     <div id="subscribe_button">
-      <%= button_to 'Unsubscribe to this Fail', unsubscribe_post_path, remote: true, method: :delete %>
+      <%= button_to 'Unsubscribe from this Fail', unsubscribe_post_path, remote: true, method: :delete %>
     </div>
   <% else %>
     <div id="subscribe_button">
