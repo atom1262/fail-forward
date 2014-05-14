@@ -1,4 +1,3 @@
-
 <div id="author">
   <strong>Author:</strong>
   <%= link_to @post.user_full_name, @post.user %>
@@ -9,9 +8,17 @@
   <%= link_to @post.industry_name, @post.industry %>
 </div>
 
-<div id="subscribe_button">
-  <%= button_to 'Subscribe to this Fail', subscribe_post_path, remote: true %>
-</div>
+<% if !current_user.owns?(@post) %>
+  <% if current_user.subscribes?(@post) %>
+    <div id="subscribe_button">
+      <%= button_to 'Unsubscribe to this Fail', unsubscribe_post_path, remote: true, method: :delete %>
+    </div>
+  <% else %>
+    <div id="subscribe_button">
+      <%= button_to 'Subscribe to this Fail', subscribe_post_path, remote: true %>
+    </div>
+  <% end %>
+<% end %>
 
 <div id="fail">
   <p> <strong> <%= @post.title %> </strong> </p>
