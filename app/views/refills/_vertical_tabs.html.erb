@@ -2,27 +2,41 @@
   <div class="vertical-tabs">
     <a href="#" class="js-vertical-tab vertical-tab is-active" rel="tab1">Your Fails</a>
     <a href="#" class="js-vertical-tab vertical-tab" rel="tab2">Recent Fails</a>
-    <a href="#" class="js-vertical-tab vertical-tab" rel="tab3">Fails in the <%= current_user.industry.name %> Industry</a>
+    <a href="#" class="js-vertical-tab vertical-tab" rel="tab3"> <%= current_user.industry.name %> Fails</a>
     <a href="#" class="js-vertical-tab vertical-tab" rel="tab4">Fails you Subscribe to</a>
+    <a href="#" class="js-vertical-tab vertical-tab" rel="tab5">Other Industries</a>
   </div>
 
   <div class="vertical-tab-content-container">
     <div id="tab1" class="js-vertical-tab-content vertical-tab-content">
-      <%= render @user_posts %>
+      <ul>
+        <%= render @user_posts %>
+      </ul>
     </div>
 
     <div id="tab2" class="js-vertical-tab-content vertical-tab-content">
-      <%= render @recent_posts %>
+      <ul>
+        <%= render @recent_posts %>
+      </ul>
     </div>
 
     <div id="tab3" class="js-vertical-tab-content vertical-tab-content">
-      <%= render @industry_posts %>
+      <ul>
+        <%= render @industry_posts %>
+      </ul>
     </div>
 
     <div id="tab4" class="js-vertical-tab-content vertical-tab-content">
-      <%= render @subscribed_posts %>
+      <ul>
+        <%= render @subscribed_posts %>
+      </ul>
     </div>
-  </div>
+
+    <div id="tab5" class="js-vertical-tab-content vertical-tab-content">
+      <ul>
+        <%= render @industries %>
+      </ul>
+    </div>
 </div>
 
 <script>

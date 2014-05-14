@@ -3,5 +3,7 @@
 <%= form_for ([@post, @improvement]) do |f| %>
   <%= render 'error_messages', target: @improvement %>
   <%= f.text_area :body, placeholder: 'What have you learned?' %>
-  <%= f.submit 'Share Knowledge' %>
+  <div id="share_button">
+    <%= f.submit 'Share Knowledge' %>
+  </div>
 <% end %>

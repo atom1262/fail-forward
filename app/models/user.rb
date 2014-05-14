@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   belongs_to :industry
   has_many :posts, dependent: :destroy
-  has_many :subscriptions
-  has_many :comments
-  has_many :improvements, through: :posts
+  has_many :subscriptions, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :improvements, through: :posts, dependent: :destroy
 
   POST_COUNT_MULTIPLIER = 1.5
   COMMENT_COUNT_MULTIPLIER = 1
@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   end
 
   def subscribes?(post)
-    subscriptions.exists?(post:post)
+    subscriptions.exists?(post: post)
   end
 
   def knowledge_score

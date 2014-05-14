@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @recent_posts = Post.all.recent
     @industry_posts = current_user.industry.posts
     @subscribed_posts = current_user.subscriptions
+    @industries = Industry.all
   end
 
   def new
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = find_post
+    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.paginated(params[:page])
     @improvements = @post.improvements.order(created_at: :asc)
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
   private
 
   def find_post
-    Post.find(params[:id])
+    current_user.posts.find(params[:id])
   end
 
   def post_params
