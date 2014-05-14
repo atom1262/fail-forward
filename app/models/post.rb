@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :improvements, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
+  has_many :post_improvements, dependent: :destroy
   delegate :industry, to: :user
 
   validates :title, presence: true

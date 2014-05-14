@@ -5,7 +5,8 @@ class PostsController < ApplicationController
     @user_posts = current_user.posts
     @recent_posts = Post.all.recent
     @industry_posts = current_user.industry.posts
-    @subscribed_posts = current_user.subscriptions
+    @subscribed_posts = current_user.subscriptions.by_improvement_date
+    p @subscribed_posts
     @industries = Industry.all
   end
 
