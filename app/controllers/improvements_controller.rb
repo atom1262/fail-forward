@@ -9,6 +9,7 @@ class ImprovementsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @improvement = @post.improvements.create(improvement_params)
+    @post.update(improved_at: Time.now)
     respond_with @improvement, location: @post
   end
 

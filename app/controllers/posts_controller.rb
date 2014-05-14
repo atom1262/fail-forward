@@ -5,8 +5,8 @@ class PostsController < ApplicationController
     @user_posts = current_user.posts
     @recent_posts = Post.all.recent
     @industry_posts = current_user.industry.posts
-    @subscribed_posts = current_user.subscriptions.by_improvement_date
-    p @subscribed_posts
+    subscribed_post_ids = current_user.subscriptions.pluck(:post_id)
+    @subscribed_posts = Post.where(id: subscribed_post_ids).order(improved_at: :desc)
     @industries = Industry.all
   end
 
