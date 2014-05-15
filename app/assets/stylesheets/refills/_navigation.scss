@@ -25,6 +25,24 @@ header.navigation {
     @include clearfix;
     position: relative;
     z-index: 9999;
+
+    #site-logo {
+      font-family: 'Lobster', cursive;
+      font-size: 50px;
+      position: absolute;
+      top: 25px;
+      left: 485px;
+      width: 350px;
+    }
+  }
+
+  #signout-button {
+    .nav-link {
+      &:last-child {
+        position: absolute;
+        right: 20px;
+      }
+    }
   }
 
   .logo {
