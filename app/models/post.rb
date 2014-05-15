@@ -3,7 +3,6 @@ class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :improvements, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
-  has_many :post_improvements, dependent: :destroy
   delegate :industry, to: :user
 
   validates :title, presence: true
@@ -12,6 +11,10 @@ class Post < ActiveRecord::Base
 
   def self.recent
     order(created_at: :desc).limit(5)
+  end
+
+  def self.by_improvement_date
+    order("improved_at DESC NULLS LAST")
   end
 
   def user_full_name
