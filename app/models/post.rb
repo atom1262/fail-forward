@@ -25,8 +25,4 @@ class Post < ActiveRecord::Base
     industry.name
   end
 
-  def user_full_name
-    user.formatted_name
-  end
-
 end

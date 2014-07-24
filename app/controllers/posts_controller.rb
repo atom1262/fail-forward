@@ -33,7 +33,6 @@ class PostsController < ApplicationController
 
   def update
     @post = find_post
-
     if @post.update(post_params)
       redirect_to @post
     else

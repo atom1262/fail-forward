@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
         user.industry = find_industry(auth.info.industry)
         user.oauth_token = auth.credentials.token
         user.save!
-      end
     end
+  end
 
   def signed_in?
     true

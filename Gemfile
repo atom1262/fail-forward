@@ -15,6 +15,7 @@ gem 'neat'
 gem 'bitters'
 gem 'refills'
 gem 'kaminari'
+gem 'redcarpet'
 
 group :development do
   gem 'binding_of_caller'
