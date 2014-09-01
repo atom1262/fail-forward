@@ -4,6 +4,7 @@
 @import "refills/navigation";
 @import "refills/vertical-tabs";
 @import "refills/comment";
+@import "landing";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -24,52 +25,52 @@ body {
   padding: 0;
 }
 
-#about {
+.about {
   position: relative;
   padding-left: 500px;
   padding-top: 200px;
 }
 
-#post_title {
+.post_title {
   width: 30%;
 }
 
-#post_body {
+.post_body {
   width: 50%;
 }
 
-#comment_body {
+.comment_body {
   padding-top: 10px;
   width: 50%;
 }
 
-#comment_button {
+.comment_button {
 }
 
-#title {
+.title {
   font-size: 20px;
   float: left;
   width: 25%;
 }
 
-#industry {
+.industry {
   font-size: 20px;
   float: left;
   width: 26%;
 }
 
-#author {
+.author {
   font-size: 20px;
   float: left;
   width: 27%;
 }
 
-#subscribe_button {
+.subscribe_button {
   float: left;
   width: 40%;
 }
 
-#fail {
+.fail {
   float: left;
   padding-left: 10px;
   width: 48%;
@@ -79,7 +80,7 @@ body {
   overflow: auto;
 }
 
-#knowledge {
+.knowledge {
   float: right;
   padding-left: 25px;
   padding-right: 10px;
@@ -89,29 +90,25 @@ body {
   overflow: auto;
 }
 
-#delete_button {
+.delete_button {
   float: left;
   width: 34%;
 }
 
-#edit_button {
+.edit_button {
   float: left;
   @include shift(1);
   width: 9%;
 }
 
-#knowledge_button {
+.knowledge_button {
   float: left;
   width: 40%;
 }
 
-#improvement_body {
+.improvement_body {
   width: 60%;
 }
 
-#share_button {
-}
-
-#signin_button {
-
+.share_button {
 }

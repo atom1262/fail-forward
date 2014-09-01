@@ -1,0 +1,18 @@
+.main-section {
+  @include outer-container;
+  @include clearfix;
+}
+
+.welcome-sign {
+  font-family: $helvetica;
+  background-color: pink;
+}
+
+.description {
+}
+
+.slogan {
+}
+
+.signin-button {
+}

@@ -10,13 +10,6 @@
 <body>
 
 
-  <% if current_user.signed_in? %>
-    <%= render 'refills/navigation' %>
-  <% else %>
-    <div id="signin_button">
-      <%= button_to 'Sign in with LinkedIn', signin_path(:linkedin), method: :get %>
-    </div>
-  <% end %>
 
 <%= yield %>
 
