@@ -1,3 +1,8 @@
+  <%= render 'refills/navigation' %>
+  <div class='signin-button'>
+    <%= link_to 'Sign-up with LinkedIn', signin_path(:linkedin) %>
+  </div>
+
 <div class="hover-tile-outer">
   <div class="hover-tile-container">
     <div class="hover-tile hover-tile-visible">
@@ -9,12 +14,3 @@
     </div>
   </div>
 </div>
-
-
-<% if current_user.signed_in? %>
-  <%= render 'refills/navigation' %>
-<% else %>
-  <div class='signin-button'>
-    <%= link_to 'Sign-up with LinkedIn', signin_path(:linkedin) %>
-  </div>
-<% end %>

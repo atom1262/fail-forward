@@ -1,8 +1,9 @@
 .signin-button {
   position: relative;
-  @include button(shiny, #ffa500);
+  @include button(shiny, lightpink);
   margin-top: 50px;
-  margin-left: 600px;
+  margin-left: 615px;
+  font-family: $helvetica;
 }
 
 .hover-tile-outer {

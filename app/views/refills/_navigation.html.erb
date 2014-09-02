@@ -1,5 +1,5 @@
 <header class="navigation">
-  <div class="menu-wrapper">
+    <% if current_user.signed_in? %>
     <a href="javascript:void(0)" class="logo">
       <img src="<%= current_user.picture_url %>" alt="">
     </a>
@@ -10,10 +10,11 @@
         <li class="nav-link"><%= link_to "Your Knowledge Score: #{current_user.knowledge_score}" %></li>
       </ul>
     </div>
-    <div id="site-logo">
+  <% end %>
+    <div class="site-logo">
       <%= link_to "Fail Forward", root_path %>
     </div>
-    <div id="signout-button">
+    <div class="signout-button">
       <li class="nav-link"><%= link_to "Sign Out", signout_path %></li>
     </div>
   </div>
