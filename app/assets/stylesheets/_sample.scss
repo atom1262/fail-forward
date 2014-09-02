@@ -1,3 +1,10 @@
+.signin-button {
+  position: relative;
+  @include button(shiny, #ffa500);
+  margin-top: 50px;
+  margin-left: 600px;
+}
+
 .hover-tile-outer {
   $hover-tile-height: 10em;
 

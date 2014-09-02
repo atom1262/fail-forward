@@ -5,7 +5,16 @@
     </div>
     <div class="hover-tile hover-tile-hidden">
       <h4>A Place to Learn</h4>
-        <p>Connect with peers within your industry, share stories of failure, subsequent knowledge gained, and grow. Never stop failing, never stop learning, and always fail forward. Sign-in through LinkedIn today.</p>
+        <p>Connect with peers within your industry, share stories of failure, subsequent knowledge gained, and grow. Never stop failing, never stop learning, and always fail forward. Sign-up through LinkedIn today.</p>
     </div>
   </div>
 </div>
+
+
+<% if current_user.signed_in? %>
+  <%= render 'refills/navigation' %>
+<% else %>
+  <div class='signin-button'>
+    <%= link_to 'Sign-up with LinkedIn', signin_path(:linkedin) %>
+  </div>
+<% end %>
