@@ -1,29 +1,11 @@
-<div class='main-section'>
-  <div class='welcome-sign'>
-    <h1>Welcome to Fail Forward</h1>
-  </div>
-
-  <div class='description'>
-    <p> Fail Forward is a forum for professionals to connect with with others within their industry, share stories of failure, and discuss the knowledge gained from those experiences. Sign in with your LinkedIn account today and start learning! </p>
-  </div>
-
-  <% if current_user.signed_in? %>
-    <%= render 'refills/navigation' %>
-  <% else %>
-    <div class='signin_button'>
-      <%= button_to 'Sign in with LinkedIn', signin_path(:linkedin), method: :get %>
+<div class="hover-tile-outer">
+  <div class="hover-tile-container">
+    <div class="hover-tile hover-tile-visible">
+      What is Fail Forward?
     </div>
-  <% end %>
-
-  <div class='slogan'>
-    <h3> Never stop failing, never stop learning... </h3>
-  </div>
-
-  <div class='about'>
-    <div class=>
-      <p>An Open Source Passion Project by <a href='http://apatterson.me'>Adam Patterson</a></p>
-      <p>Check me out on <a href='http://www.linkedin.com/in/adampatterson1'>LinkedIn</a></p>
-      <p>See my code on <a href='http://www.github.com/atom1262/fail-forward'>GitHub</a></p>
+    <div class="hover-tile hover-tile-hidden">
+      <h4>A Place to Learn</h4>
+        <p>Connect with peers within your industry, share stories of failure, subsequent knowledge gained, and grow. Never stop failing, never stop learning, and always fail forward. Sign-in through LinkedIn today.</p>
     </div>
   </div>
 </div>

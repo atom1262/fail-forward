@@ -4,7 +4,7 @@
 @import "refills/navigation";
 @import "refills/vertical-tabs";
 @import "refills/comment";
-@import "landing";
+@import "sample";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -23,12 +23,7 @@
 body {
   margin: 0;
   padding: 0;
-}
-
-.about {
-  position: relative;
-  padding-left: 500px;
-  padding-top: 200px;
+  background-color: lightblue;
 }
 
 .post_title {
