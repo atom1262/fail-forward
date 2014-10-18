@@ -2,28 +2,35 @@
   @include outer-container;
   @include clearfix;
 
+  h1 {
+  text-align: center;
+  margin: 2.5em auto 1em auto;
+  }
+
   .signin-button {
+    @include button(lightpink);
     position: relative;
-    @include button(shiny, lightpink);
-    margin-top: 50px;
-    margin-left: 615px;
+    display: block;
+    width: 14em;
+    vertical-align: middle;
+    margin: 0 auto 0 auto;
     font-family: $helvetica;
+
+    a {
+      text-align: center;
+    }
   }
 
   .hover-tile-outer {
     $hover-tile-height: 10em;
 
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 200px;
+    margin: 2.5em auto 2.5em auto;
     background-position: bottom;
     background-size: cover;
-    background: url("/images/mountains.png");
     background-size: cover;
     background-color: #BEB56E;
     border: 1px solid $base-border-color;
     height: $hover-tile-height;
-    margin-bottom: $base-line-height;
     cursor: pointer;
 
     @include media($medium-screen) {
