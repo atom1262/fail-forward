@@ -1,83 +1,68 @@
 .main-section {
   @include outer-container;
   @include clearfix;
-}
-
-  .welcome-sign {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 28em;
-    padding-left: 5px;
-    font-family: $helvetica;
-    background-color: pink;
-    border: 5px solid red;
-    border-radius: 10px;
-  }
-
-  .description {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 50em;
-    padding: 5px;
-  }
-
 
   .signin-button {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    text-align: center;
-  }
-
-  .slogan {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    @include button(shiny, lightpink);
     margin-top: 50px;
-    width: 35em;
-    padding: 5px;
+    margin-left: 615px;
+    font-family: $helvetica;
   }
 
-  .about {
-    position: relative;
-    padding-left: 350px;
-    margin-top: 100px;
+  .hover-tile-outer {
+    $hover-tile-height: 10em;
+
     margin-left: auto;
     margin-right: auto;
+    margin-top: 200px;
+    background-position: bottom;
+    background-size: cover;
+    background: url("/images/mountains.png");
+    background-size: cover;
+    background-color: #BEB56E;
+    border: 1px solid $base-border-color;
+    height: $hover-tile-height;
+    margin-bottom: $base-line-height;
+    cursor: pointer;
+
+    @include media($medium-screen) {
+      width: 40%;
+    }
+
+    .hover-tile-container {
+      height: $hover-tile-height;
+      overflow: hidden;
+    }
+
+    .hover-tile-container:hover > .hover-tile {
+      @include transform(translate(0, -100%));
+    }
+
+    .hover-tile {
+      @include transition(all, .2s ease-in-out);
+      background:inherit;
+      color: white;
+      height:inherit;
+      padding: 1em 1.5em;
+    }
+
+    .hover-tile-visible {
+      color: transparentize(white, .3);
+      font-size: 2em;
+      font-weight: 200;
+      padding-top: 2em;
+      text-align: center;
+    }
+
+    .hover-tile-hidden {
+      background: transparentize(black, .5);
+      h4 {
+        margin-bottom: .5em;
+      }
+      p {
+        color: transparentize(white, .3);
+      }
+    }
   }
-  <div class='main-section'>
-    <div class='welcome-sign'>
-      <h1>Welcome to Fail Forward</h1>
-    </div>
-
-    <div class='description'>
-      <p> Fail Forward is a place for professionals to connect with others in their industry, share stories of failure, and discuss the knowledge gained from those experiences. Sign in with your LinkedIn account today and continue learning! </p>
-    </div>
-
-    <% if current_user.signed_in? %>
-      <%= render 'refills/navigation' %>
-    <% else %>
-      <div class='signin_button'>
-        <%= button_to 'Sign in with LinkedIn', signin_path(:linkedin), method: :get %>
-      </div>
-    <% end %>
-
-    <div class='slogan'>
-      <h3> Never stop failing, never stop learning... </h3>
-    </div>
-
-    <div class='about'>
-      <div class=>
-        <p>An Open Source Passion Project by <a href='http://apatterson.me'>Adam Patterson</a></p>
-        <p>Check me out on <a href='http://www.linkedin.com/in/adampatterson1'>LinkedIn</a></p>
-        <p>See my code on <a href='http://www.github.com/atom1262/fail-forward'>GitHub</a></p>
-      </div>
-    </div>
-  </div>
+}

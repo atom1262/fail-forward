@@ -1,0 +1,50 @@
+.post_title {
+  width: 30%;
+}
+
+.post_body {
+  width: 50%;
+}
+
+.improvement_body {
+  width: 60%;
+}
+
+.title {
+  font-size: 20px;
+  float: left;
+  width: 25%;
+}
+
+.industry {
+  font-size: 20px;
+  float: left;
+  width: 26%;
+}
+
+.author {
+  font-size: 20px;
+  float: left;
+  width: 27%;
+}
+
+.fail {
+  float: left;
+  padding-left: 10px;
+  width: 48%;
+  height: 300px;
+  padding-left: 25px;
+  background-color: rgb(208,208,208);
+  overflow: auto;
+}
+
+.knowledge {
+  float: right;
+  padding-left: 25px;
+  padding-right: 10px;
+  width: 48%;
+  height: 300px;
+  background-color: rgb(208,208,208);
+  overflow: auto;
+}
+
