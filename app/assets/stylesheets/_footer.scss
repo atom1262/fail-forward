@@ -1,73 +1,53 @@
-// Uncomment this for a sticky footer.
-
- .wrapper-for-content-outside-of-footer {
-   min-height: 100%;
-   //height: auto !important;
-   height: 100%;
-   margin: 0 auto -4em;
- }
-
- html, body {
-  height: 100%;
- }
-
- .wrapper-for-content-outside-of-footer:after {
-   content: "";
-   display: block;
- }
-
- .footer-2, .wrapper-for-content-outside-of-footer:after {
-   height: 17em;
-
-   @include media($large-screen) {
-     height: 4em;
-   }
- }
-
-.footer-2 {
+.footer {
   $footer-background: desaturate(darken($base-accent-color, 20), 30);
   $footer-color: white;
   $footer-link-color: transparentize($footer-color, .6);
   $footer-disclaimer-color: transparentize($footer-color, .6);
 
   background: $footer-background;
-  padding: $base-spacing;
+  padding: $base-spacing*2 $gutter;
   width: 100%;
 
   .footer-logo {
-    margin-right: 1em;
-    margin-bottom: 1em;
+    text-align: center;
+    margin-bottom: 2em;
 
-    @include media($large-screen) {
-      float: left;
-      margin-bottom: 0;
+    img {
+      height: 4em;
+      border: 1px solid black;
+      border-radius: 2em;
+      padding: .5em;
     }
   }
 
-  .footer-logo img {
-    height: 1.6em;
+  .footer-links {
+    @include clearfix;
+    margin-bottom: $base-spacing;
+
+    @include media($medium-screen) {
+      @include shift(3);
+    }
   }
 
   ul {
-    margin-bottom: 1em;
-    @include media($large-screen) {
-      float: left;
-      margin-left: 1em;
-      margin-bottom: 0;
+    margin-bottom: $base-spacing*2;
+
+    @include media($medium-screen) {
+      @include span-columns(3);
+      @include omega(3n);
+      @include clearfix;
     }
   }
 
-  ul li {
-    padding-right: 1em;
-    font-weight: 800;
+  li {
+    text-align: center;
 
-    @include media($large-screen) {
-      display: inline;
+    @include media($medium-screen) {
       text-align: left;
     }
   }
 
-  ul li a {
+  li a {
     color: $footer-link-color;
 
     &:hover {
@@ -75,43 +55,25 @@
     }
   }
 
-  .footer-secondary-links {
-    @include media($large-screen) {
-      float: right;
-    }
+  li h3 {
+    color: $footer-color;
+    font-size: 1em;
+    font-weight: 800;
+    margin-bottom: .4em;
+  }
 
-    li {
-      font-size: .8em;
-      font-weight: 400;
-    }
+  hr {
+    border: 1px solid transparentize($footer-disclaimer-color, .3);
+    margin: 0 auto $base-spacing;
+    width: 12em;
+  }
 
-    ul.footer-social {
-      margin-top: 1em;
-
-      @include media($large-screen) {
-        float: right;
-        margin-top: 0;
-      }
-
-      li {
-        float: left;
-        font-size: 1em;
-        padding-right: .7em;
-
-        &:last-child {
-          padding-right: 0;
-        }
-      }
-
-      img {
-        opacity: .7;
-        height: 1.6em;
-        padding: 1px;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
+  p {
+    color: $footer-disclaimer-color;
+    font-size: .9em;
+    line-height: 1.5em;
+    margin: auto;
+    max-width: 35em;
+    text-align: center;
   }
 }

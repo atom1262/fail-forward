@@ -16,6 +16,7 @@ gem 'bitters'
 gem 'refills'
 gem 'kaminari'
 gem 'redcarpet'
+gem 'font-awesome-sass'
 
 group :development do
   gem 'binding_of_caller'
