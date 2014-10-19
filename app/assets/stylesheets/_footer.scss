@@ -3,10 +3,13 @@
   $footer-color: white;
   $footer-link-color: transparentize($footer-color, .6);
   $footer-disclaimer-color: transparentize($footer-color, .6);
+  $footer-margin: 12em;
 
   background: $footer-background;
   padding: $base-spacing*2 $gutter;
   width: 100%;
+  margin-top: $footer-margin;
+
 
   .footer-logo {
     text-align: center;

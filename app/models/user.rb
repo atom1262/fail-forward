@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   COMMENT_COUNT_MULTIPLIER = 1
   IMPROVEMENT_COUNT_MULTIPLIER = 2
 
+  def knowledge_score
+    post_score + comment_score + improvement_score
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
         user.provider = auth.provider
@@ -45,8 +49,14 @@ class User < ActiveRecord::Base
     subscriptions.exists?(post: post)
   end
 
-  def knowledge_score
-    post_score + comment_score + improvement_score
+  def knowledge_level
+    if knowledge_score <= 50
+      "Padawan"
+    elsif knowledge_score <= 100
+      "Star Pupil"
+    else knowledge score > 100
+      "Knowledge Seeker"
+    end
   end
 
   private

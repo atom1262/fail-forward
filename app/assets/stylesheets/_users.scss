@@ -1,0 +1,5 @@
+.main-section {
+  @include outer-container;
+  @include clearfix;
+  height: 100%;
+}

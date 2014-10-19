@@ -2,12 +2,11 @@
   @include outer-container;
   @include clearfix;
   height: 100%;
-  margin-bottom: 5em;
 
   h1 {
   text-align: center;
-  margin: 2.5em auto 1em auto;
-  font-family: $helvetica;
+  margin: 2.5em auto 0  auto;
+  font-family: $helvetica neue;
   color: $ubuntu-black;
   }
 
@@ -29,7 +28,7 @@
   }
 
   .hover-tile-outer {
-    $hover-tile-height: 10em;
+    $hover-tile-height: 12em;
 
     margin: 2.5em auto 2.5em auto;
     background-position: bottom;
