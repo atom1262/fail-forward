@@ -6,24 +6,7 @@
     <a href="" class="centered-navigation-menu-button">MENU</a>
     <ul class="centered-navigation-menu">
       <li class="nav-link"><a><%= link_to 'Profile', user_path(current_user.id) %></a></li>
-      <li class="nav-link more"><a href="javascript:void(0)">Fails</a>
-        <ul class="submenu">
-          <li><a href="javascript:void(0)">Submenu Item</a></li>
-          <li><a href="javascript:void(0)">Another Item</a></li>
-          <li class="more"><a href="javascript:void(0)">Item with submenu</a>
-            <ul class="submenu">
-              <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
-              <li><a href="javascript:void(0)">Another Item</a></li>
-            </ul>
-          </li>
-          <li class="more"><a href="javascript:void(0)">Another submenu</a>
-            <ul class="submenu">
-              <li><a href="javascript:void(0)">Sub-submenu</a></li>
-              <li><a href="javascript:void(0)">An Item</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <li class="nav-link js-menu-trigger"><a href="javascript:void(0)">Learn</a>
       <li class="nav-link"><a><%= link_to 'Sign Out', signout_path %></a></li>
       <li class="nav-link logo">
         <a class="nav-link-logo">

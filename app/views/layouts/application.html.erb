@@ -9,9 +9,14 @@
 
 <body>
 
+<% if current_user.signed_in? %>
+  <%= render 'partials/navigation' %>
+<% end %>
+
 <%= yield %>
 
 <%= render 'partials/footer' %>
+
 </body>
 
 </html>
