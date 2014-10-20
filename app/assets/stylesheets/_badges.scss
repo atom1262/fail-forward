@@ -1,0 +1,43 @@
+.badges {
+  $badge-background: $medium-gray;
+  $badge-dark-color: $dark-gray;
+  $badge-rank1-color: $error-color;
+  $badge-rank2-color: $notice-color;
+  $badge-rank3-color: $success-color;
+  $badge-font-color: #fff;
+  $badge-font-size: $base-font-size * .75;
+
+  display: block;
+  margin-bottom: $base-line-height;
+
+  .badge {
+    @include inline-block;
+    background: $badge-background;
+    border-radius: 2em;
+    color: $badge-font-color;
+    font-size: $badge-font-size;
+    font-weight: 600;
+    line-height: 1;
+    padding: .25em 1em;
+    text-align: center;
+
+    &.dark {
+      background: $badge-dark-color;
+    }
+
+    &.error {
+      background: $badge-rank1-color;
+      color: darken($badge-rank1-color, 60);
+    }
+
+    &.notice {
+      background: $badge-rank2-color;
+      color: darken($badge-rank2-color, 60);
+    }
+
+    &.success {
+      background: $badge-rank3-color;
+      color: darken($badge-rank3-color, 60);
+    }
+  }
+}

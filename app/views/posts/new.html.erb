@@ -1,9 +1,11 @@
-<h2>Create a New Post</h2>
+<div class="main-section">
+  <h2>Create a New Post</h2>
 
-<%= form_for @post do |f| %>
-  <%= render 'error_messages', target: @post %>
-  <p> <%= f.text_field :title, placeholder: 'Post Title' %> </p>
-  <p> Your Industry: <%= current_user.industry.name %> </p>
-  <p> <%= f.text_area :body, placeholder: 'Post Body' %> </p>
-  <%= f.submit %>
-<% end %>
+  <%= form_for @post do |f| %>
+    <%= render 'error_messages', target: @post %>
+    <p> <%= f.text_field :title, placeholder: 'Post Title' %> </p>
+    <p> <strong>Industry:</strong> <%= current_user.industry.name %> </p>
+    <p> <%= f.text_area :body, placeholder: 'Post Body' %> </p>
+    <%= f.submit %>
+  <% end %>
+</div>

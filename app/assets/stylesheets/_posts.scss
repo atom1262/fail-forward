@@ -1,50 +1,55 @@
-.post_title {
-  width: 30%;
-}
+.main-section {
+  @include outer-container;
+  @include clearfix;
+  height: 100%;
 
-.post_body {
-  width: 50%;
-}
+  .post_title {
+    width: 30%;
+  }
 
-.improvement_body {
-  width: 60%;
-}
+  .post_body {
+    width: 50%;
+  }
 
-.title {
-  font-size: 20px;
-  float: left;
-  width: 25%;
-}
+  .improvement_body {
+    width: 60%;
+  }
 
-.industry {
-  font-size: 20px;
-  float: left;
-  width: 26%;
-}
+  .title {
+    font-size: 20px;
+    float: left;
+    width: 25%;
+  }
 
-.author {
-  font-size: 20px;
-  float: left;
-  width: 27%;
-}
+  .industry {
+    font-size: 20px;
+    float: left;
+    width: 26%;
+  }
 
-.fail {
-  float: left;
-  padding-left: 10px;
-  width: 48%;
-  height: 300px;
-  padding-left: 25px;
-  background-color: rgb(208,208,208);
-  overflow: auto;
-}
+  .author {
+    font-size: 20px;
+    float: left;
+    width: 27%;
+  }
 
-.knowledge {
-  float: right;
-  padding-left: 25px;
-  padding-right: 10px;
-  width: 48%;
-  height: 300px;
-  background-color: rgb(208,208,208);
-  overflow: auto;
-}
+  .fail {
+    float: left;
+    padding-left: 10px;
+    width: 48%;
+    height: 300px;
+    padding-left: 25px;
+    background-color: rgb(208,208,208);
+    overflow: auto;
+  }
 
+  .knowledge {
+    float: right;
+    padding-left: 25px;
+    padding-right: 10px;
+    width: 48%;
+    height: 300px;
+    background-color: rgb(208,208,208);
+    overflow: auto;
+  }
+}

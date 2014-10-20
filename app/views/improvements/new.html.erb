@@ -1,9 +1,11 @@
-<h2>What have you learned from this fail?</h2>
+<div class="main-section">
+  <h2>What have you learned from this fail?</h2>
 
-<%= form_for ([@post, @improvement]) do |f| %>
-  <%= render 'error_messages', target: @improvement %>
-  <%= f.text_area :body, placeholder: 'What have you learned?' %>
-  <div id="share_button">
-    <%= f.submit 'Share Knowledge' %>
-  </div>
-<% end %>
+  <%= form_for ([@post, @improvement]) do |f| %>
+    <%= render 'error_messages', target: @improvement %>
+    <%= f.text_area :body, placeholder: 'What have you learned?' %>
+    <div id="share_button">
+      <%= f.submit 'Share Knowledge' %>
+    </div>
+  <% end %>
+</div>

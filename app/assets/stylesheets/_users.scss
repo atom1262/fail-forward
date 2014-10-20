@@ -2,4 +2,20 @@
   @include outer-container;
   @include clearfix;
   height: 100%;
+
+  img {
+    display: inline;
+    border: 5px solid $ubuntu-purple;
+    outline-color: $ubuntu-orange;
+    outline-style: solid;
+  }
+  .user-information {
+    display: inline;
+  }
+  h4,h3,.knowledge-level {
+    display: block;
+  }
+  .user-industry {
+    display: inline;
+  }
 }

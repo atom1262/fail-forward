@@ -1,19 +1,22 @@
 <div class="main-section">
-  <%= image_tag(@user.picture_url) %>
+    <%= image_tag(@user.picture_url) %>
+
   <div class="user-information">
-    <% if @user == current_user %>
-      <h4>Welcome, <%= current_user.first_name %></h4>
-    <% else %>
-      <h3><%= @user.formatted_name %></h3>
-    <% end %>
-  </div>
+    <div class="username">
+      <% if @user == current_user %>
+        <h4>Welcome, <%= current_user.first_name %></h4>
+      <% else %>
+        <h3><%= @user.formatted_name %></h3>
+      <% end %>
+    </div>
 
-  <div class="knowledge-level">
-    <strong>FailForward Rank:</strong> <%= @user.knowledge_level %>
-  </div>
+    <div class="knowledge-level">
+      <strong>FailForward Rank:</strong> <%= @user.knowledge_level %>
+    </div>
 
-  <div class="user-industry"> 
-    <strong>Industry:</strong> <%= @industry.name %>
+    <div class="user-industry">
+      <strong>Industry:</strong> <%= @industry.name %>
+    </div>
   </div>
 
   <div class="user-posts">

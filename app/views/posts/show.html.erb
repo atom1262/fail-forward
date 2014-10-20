@@ -1,66 +1,67 @@
-<div id="author">
-  <strong>Author:</strong>
-  <%= link_to @post.user_full_name, @post.user %>
-</div>
+<div class="main-section">
+  <div id="author">
+    <strong>Author:</strong>
+    <%= link_to @post.user_full_name, @post.user %>
+  </div>
 
-<div id="industry">
-  <strong>Industry:</strong>
-  <%= link_to @post.industry_name, @post.industry %>
-</div>
+  <div id="industry">
+    <strong>Industry:</strong>
+    <%= link_to @post.industry_name, @post.industry %>
+  </div>
 
-<% if !current_user.owns?(@post) %>
-  <% if current_user.subscribes?(@post) %>
-    <div id="subscribe_button">
-      <%= button_to 'Unsubscribe from this Fail', unsubscribe_post_path, remote: true, method: :delete %>
-    </div>
-  <% else %>
-    <div id="subscribe_button">
-      <%= button_to 'Subscribe to this Fail', subscribe_post_path, remote: true %>
-    </div>
+  <% if !current_user.owns?(@post) %>
+    <% if current_user.subscribes?(@post) %>
+      <div id="subscribe_button">
+        <%= button_to 'Unsubscribe from this Fail', unsubscribe_post_path, remote: true, method: :delete %>
+      </div>
+    <% else %>
+      <div id="subscribe_button">
+        <%= button_to 'Subscribe to this Fail', subscribe_post_path, remote: true %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 
-<div id="fail">
-  <p> <strong> <%= @post.title %> </strong> </p>
-  <%= @post.body %>
-</div>
+  <div id="fail">
+    <p> <strong> <%= @post.title %> </strong> </p>
+    <%= @post.body %>
+  </div>
 
-<div id="knowledge">
-  <p> <strong>What I Have Learned</strong> </p>
-  <ul>
-    <%= render @improvements %>
-  </ul>
-</div>
+  <div id="knowledge">
+    <p> <strong>What I Have Learned</strong> </p>
+    <ul>
+      <%= render @improvements %>
+    </ul>
+  </div>
 
-<div>
-  <% if current_user.owns?(@post) %>
-    <div id="delete_button">
-      <%= button_to 'Delete', @post, method: :delete %>
-    </div>
-    <div id="edit_button">
-      <%= button_to 'Edit', edit_post_path(@post), method: :get %>
-    </div>
-    <div id="knowledge_button">
-      <%= button_to 'Add Knowledge', new_post_improvement_path(@post), method: :get %>
-    </div>
-  <% end %>
-</div>
-
-<div id="comment_wrapper">
-  <div id="comment_body">
-    <%= form_for ([@post, @comment]) do |f| %>
-      <%= f.text_area :body, placeholder: 'Type Comment' %>
-      <div id="comment_button">
-        <%= f.submit 'Comment' %>
+  <div>
+    <% if current_user.owns?(@post) %>
+      <div id="delete_button">
+        <%= button_to 'Delete', @post, method: :delete %>
+      </div>
+      <div id="edit_button">
+        <%= button_to 'Edit', edit_post_path(@post), method: :get %>
+      </div>
+      <div id="knowledge_button">
+        <%= button_to 'Add Knowledge', new_post_improvement_path(@post), method: :get %>
       </div>
     <% end %>
   </div>
 </div>
 
-<div>
-  <ul>
-    <%= render @comments %>
-    <%= paginate @comments %>
-  </ul>
-</div>
+  <div id="comment_wrapper">
+    <div id="comment_body">
+      <%= form_for ([@post, @comment]) do |f| %>
+        <%= f.text_area :body, placeholder: 'Type Comment' %>
+        <div id="comment_button">
+          <%= f.submit 'Comment' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
+  <div>
+    <ul>
+      <%= render @comments %>
+      <%= paginate @comments %>
+    </ul>
+  </div>

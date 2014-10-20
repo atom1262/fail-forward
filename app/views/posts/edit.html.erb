@@ -1,9 +1,11 @@
-<h2>Edit <%= @post.title %></h2>
+<div class="main-section">
+  <h2>Edit <%= @post.title %></h2>
 
-<%= link_to 'Cancel', post_path(@post) %>
+  <%= link_to 'Cancel', post_path(@post) %>
 
-<%= form_for @post do |f| %>
-  <p> <%= f.text_field :title, value: @post.title %> </p>
-  <p> <%= f.text_area :body, value: @post.body %> </p>
-  <p> <%= f.submit %> </p>
-<% end %>
+  <%= form_for @post do |f| %>
+    <p> <%= f.text_field :title, value: @post.title %> </p>
+    <p> <%= f.text_area :body, value: @post.body %> </p>
+    <p> <%= f.submit %> </p>
+  <% end %>
+</div>
