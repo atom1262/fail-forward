@@ -1,32 +1,24 @@
 <div class="main-section">
-  <div id="author">
-    <strong>Author:</strong>
-    <%= link_to @post.user_full_name, @post.user %>
-  </div>
-
-  <div id="industry">
-    <strong>Industry:</strong>
-    <%= link_to @post.industry_name, @post.industry %>
+  <div class="intro-text">
+    <h3><%= link_to @post.industry_name, @post.industry %></h3>
+    <h2><%= @post.title %></h2>
+    <h4><%= link_to @post.user_full_name, @post.user %></h4>
+    <p>Lorem ipsum dolor sit amet, consectetur consectetur adipisicing elit. Perferendis para mitis eun non ullam atque debitis, illo adipisicing elit. Perferendis para mitis eun non ullam atque debitis, illo. Amet, consectetur adipisicing.</p>
   </div>
 
   <% if !current_user.owns?(@post) %>
     <% if current_user.subscribes?(@post) %>
-      <div id="subscribe_button">
+      <div class="button subscribe-button">
         <%= button_to 'Unsubscribe from this Fail', unsubscribe_post_path, remote: true, method: :delete %>
       </div>
     <% else %>
-      <div id="subscribe_button">
+      <div class="button subscribe-button">
         <%= button_to 'Subscribe to this Fail', subscribe_post_path, remote: true %>
       </div>
     <% end %>
   <% end %>
 
-  <div id="fail">
-    <p> <strong> <%= @post.title %> </strong> </p>
-    <%= @post.body %>
-  </div>
-
-  <div id="knowledge">
+  <div class="knowledge">
     <p> <strong>What I Have Learned</strong> </p>
     <ul>
       <%= render @improvements %>
@@ -35,28 +27,16 @@
 
   <div>
     <% if current_user.owns?(@post) %>
-      <div id="delete_button">
+      <div class="button delete-button">
         <%= button_to 'Delete', @post, method: :delete %>
       </div>
-      <div id="edit_button">
+      <div class="button edit-button">
         <%= button_to 'Edit', edit_post_path(@post), method: :get %>
       </div>
-      <div id="knowledge_button">
+      <div class="button knowledge-button">
         <%= button_to 'Add Knowledge', new_post_improvement_path(@post), method: :get %>
       </div>
     <% end %>
-  </div>
-</div>
-
-  <div id="comment_wrapper">
-    <div id="comment_body">
-      <%= form_for ([@post, @comment]) do |f| %>
-        <%= f.text_area :body, placeholder: 'Type Comment' %>
-        <div id="comment_button">
-          <%= f.submit 'Comment' %>
-        </div>
-      <% end %>
-    </div>
   </div>
 
   <div>
@@ -65,3 +45,15 @@
       <%= paginate @comments %>
     </ul>
   </div>
+
+  <div class="comment-wrapper">
+    <div class="comment-body">
+      <%= form_for ([@post, @comment]) do |f| %>
+        <%= f.text_area :body, placeholder: 'Type Comment' %>
+        <div class="button comment-button">
+          <%= f.submit 'Comment' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

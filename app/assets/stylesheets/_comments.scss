@@ -9,7 +9,7 @@
 
   display: table;
   width: 100%;
-  margin-bottom: $base-line-height;
+  margin-bottom: $base-spacing;
   padding-bottom: 1em;
   border-bottom: 1px solid transparentize($comment-color, .9);
 
@@ -26,7 +26,6 @@
       width: $comment-image-width;
       height: auto;
       border-radius: $base-border-radius;
-      padding: $comment-image-padding;
       background: $comment-background;
       display: block;
       max-width: none;
@@ -56,12 +55,4 @@
       color: $comment-detail-color;
     }
   }
-}
-
-.comment_body {
-  padding-top: 10px;
-  width: 50%;
-}
-
-.comment_button {
 }

@@ -5,19 +5,21 @@
   $centered-navigation-color: white;
   $centered-navigation-color-hover: $ubuntu-orange;
   $centered-navigation-height: 100px;
-  $centered-navigation-item-padding: 0.5em;
+  $centered-navigation-item-padding: 1.25em;
   $centered-navigation-submenu-padding: 1em;
   $centered-navigation-submenu-width: 12em;
   $centered-navigation-item-nudge: 2.2em;
+  $footer-background: desaturate(darken($base-accent-color, 20), 30);
   $horizontal-bar-mode: $large-screen;
 
   background-color: $ubuntu-purple;
-  border-bottom: 1px solid darken($centered-navigation-background, 6);
+  border-bottom: 5px solid darken($footer-background, 6);
   font-family: $serif;
   height: $centered-navigation-height;
   width: 100%;
   z-index: 9999;
   margin-bottom: 5em;
+  @include clearfix;
 
   // Mobile view
 
@@ -68,7 +70,7 @@
   ul.centered-navigation-menu {
     -webkit-transform-style: preserve-3d; // stop webkit flicker
     clear: both;
-    opacity: .8;
+    opacity: 1;
     display: none;
     margin: 0 auto;
     overflow: visible;
@@ -133,7 +135,7 @@
   .logo img {
     margin-bottom: -$centered-navigation-logo-height / 3;
     max-height: $centered-navigation-logo-height;
-    border: 1px solid $ubuntu-black;
+    border: 3px solid $ubuntu-black;
     border-radius: 5em;
   }
 

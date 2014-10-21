@@ -8,14 +8,20 @@
     border: 5px solid $ubuntu-purple;
     outline-color: $ubuntu-orange;
     outline-style: solid;
+    margin: 1em auto 1em auto;
   }
   .user-information {
     display: inline;
-  }
-  h4,h3,.knowledge-level {
-    display: block;
+    margin: 1em auto 1em auto;
+
+    h4,h3,.knowledge-level {
+        display: block;
+    }
   }
   .user-industry {
     display: inline;
+  }
+  .user-posts {
+    margin: 1em auto auto auto;
   }
 }

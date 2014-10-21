@@ -3,8 +3,7 @@
     <img src=<%= comment.user.picture_url %> alt="">
   </div>
   <div class="comment-content">
-    <h1><%= comment.body %></h1>
-    <p> </p>
+    <p><%= comment.body %></p>
     <p class="comment-detail"><%= comment.user.formatted_name %> said <%= time_ago_in_words(comment.created_at) %></p>
   </div>
 </div>
