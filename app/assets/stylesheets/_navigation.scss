@@ -14,12 +14,15 @@
 
   background-color: $ubuntu-purple;
   border-bottom: 5px solid darken($footer-background, 6);
+  border-right: 5px solid darken($footer-background, 6);
+  border-left: 5px solid darken($footer-background, 6);
   font-family: $serif;
   height: $centered-navigation-height;
   width: 100%;
   z-index: 9999;
   margin-bottom: 5em;
   @include clearfix;
+  @include outer-container;
 
   // Mobile view
 
