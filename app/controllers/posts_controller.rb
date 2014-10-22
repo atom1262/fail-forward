@@ -7,8 +7,6 @@ class PostsController < ApplicationController
     @industry_posts = current_user.industry.posts
     subscribed_post_ids = current_user.subscriptions.pluck(:post_id)
     @subscribed_posts = Post.where(id: subscribed_post_ids).by_improvement_date
-    @subscribed_posts
-    @industries = Industry.all
   end
 
   def new

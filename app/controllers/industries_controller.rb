@@ -5,4 +5,14 @@ class IndustriesController < ApplicationController
     @posts = @industry.posts
   end
 
+  def index
+    @industries = Industry.all
+  end
+
+  private
+
+  def industry_params
+    params.require(:industries).permit(:name)
+  end
+
 end

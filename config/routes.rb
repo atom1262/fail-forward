@@ -4,7 +4,7 @@ FailForward::Application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :industries, only: [:show]
+  resources :industries, only: [:show, :index]
 
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: [:new, :create]

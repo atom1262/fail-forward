@@ -2,6 +2,16 @@
   <div class="user-controls">
     <% if current_user.owns?(@post) %>
       <%= render 'refills/user_controls' %>
+    <% else %>
+      <% if current_user.subscribes?(@post) %>
+        <div class="button subscribe-button">
+          <%= button_to 'Unsubscribe from this Fail', unsubscribe_post_path, remote: true, method: :delete %>
+        </div>
+      <% else %>
+        <div class="button subscribe-button">
+          <%= button_to 'Subscribe to this Fail', subscribe_post_path, remote: true %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
@@ -9,20 +19,8 @@
     <h3><%= link_to @post.industry_name, @post.industry %></h3>
     <h2><%= @post.title %></h2>
     <h4><%= link_to @post.user_full_name, @post.user %></h4>
-    <p><%= @post.body %>Lorem ipsum dolor sit amet, consectetur consectetur adipisicing elit. Perferendis para mitis eun non ullam atque debitis, illo adipisicing elit. Perferendis para mitis eun non ullam atque debitis, illo. Amet, consectetur adipisicing.</p>
+    <p><%= @post.body %></p>
   </div>
-
-  <% if !current_user.owns?(@post) %>
-    <% if current_user.subscribes?(@post) %>
-      <div class="button subscribe-button">
-        <%= button_to 'Unsubscribe from this Fail', unsubscribe_post_path, remote: true, method: :delete %>
-      </div>
-    <% else %>
-      <div class="button subscribe-button">
-        <%= button_to 'Subscribe to this Fail', subscribe_post_path, remote: true %>
-      </div>
-    <% end %>
-  <% end %>
 
   <div class="knowledge">
     <div class="intro-text">
