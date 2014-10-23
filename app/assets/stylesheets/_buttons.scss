@@ -1,23 +1,4 @@
-.delete-button {
-  float: left;
-  width: 10%;
-}
-
-.edit-button {
-  float: left;
-  @include shift(1);
-  width: 9%;
-}
-
-.knowledge-button {
-  float: left;
-  width: 40%;
-}
-
 .subscribe-button {
-  float: left;
-  width: 40%;
+  text-align: center;
 }
 
-.share-button {
-}
