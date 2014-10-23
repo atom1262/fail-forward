@@ -6,16 +6,16 @@
     <a href="" class="centered-navigation-menu-button">MENU</a>
     <ul class="centered-navigation-menu">
       <li class="nav-link"><a><%= link_to 'Home', user_path(current_user.id) %></a></li>
-      <li class="nav-link js-menu-trigger"><a href="javascript:void(0)">Menu</a>
+      <li class="nav-link"><a><%= link_to 'Learn', posts_path %></a></li>
       <li class="nav-link"><a><%= link_to 'Sign Out', signout_path %></a></li>
       <li class="nav-link logo">
-        <a class="nav-link-logo">
+        <a>
           <img src="<%= current_user.picture_url %>" alt="User Photo">
         </a>
       </li>
-      <li class="nav-link"><a href="http://apatterson.me">About</a></li>
-      <li class="nav-link"><a href="mailto:adam@apatterson.me">Contact</a></li>
-      <li class="nav-link"><a href="https://github.com/atom1262/fail-forward">Code</a></li>
+      <li class="nav-link"><a><%= link_to 'About', "http://apatterson.me" %></a></li>
+      <li class="nav-link"><a><%= link_to 'Contact', "mailto:adam@apatterson.me" %></a></li>
+      <li class="nav-link"><a><%= link_to 'Code', "https://github.com/atom1262/fail-forward" %></a></li>
     </ul>
   </div>
 </header>

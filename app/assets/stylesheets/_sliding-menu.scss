@@ -10,10 +10,10 @@ $sliding-menu-color-hover: #fff;
   @include inline-block;
   cursor: pointer;
   font-size: $base-font-size;
-  margin-bottom: 10em;
+  margin-bottom: $base-line-height;
   position: relative;
   outline: none;
-  margin: 5em 40em 10em 40em;
+  text-align: center;
 
   img {
     height: 1.3em;

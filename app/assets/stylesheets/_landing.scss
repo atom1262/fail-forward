@@ -37,7 +37,6 @@
     background-color: $ubuntu-purple;
     border: 1px solid $base-border-color;
     height: $hover-tile-height;
-    cursor: pointer;
 
     @include media($medium-screen) {
       width: 40%;
