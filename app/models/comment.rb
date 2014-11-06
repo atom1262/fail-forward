@@ -16,4 +16,12 @@ class Comment < ActiveRecord::Base
     recent.page(page).per(COMMENTS_PER_PAGE)
   end
 
+  def first_name
+    user.first_name
+  end
+
+  def user_image
+    user.picture_url
+  end
+
 end

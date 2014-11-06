@@ -1,9 +1,9 @@
 <div class="comment">
   <div class="comment-image">
-    <img src=<%= comment.user.picture_url %> alt="">
+    <img src=<%= comment.user_image %> alt="">
   </div>
   <div class="comment-content">
     <p><%= comment.body %></p>
-    <p class="comment-detail"><%= comment.user.formatted_name %> said <%= time_ago_in_words(comment.created_at) %> ago</p>
+    <p class="comment-detail"><%= link_to comment.first_name, user_path(comment.user_id) %> said <%= time_ago_in_words(comment.created_at) %> ago</p>
   </div>
 </div>

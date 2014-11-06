@@ -4,14 +4,19 @@ $sliding-menu-color: #fff;
 $sliding-menu-border: 1px solid $sliding-menu-border-color;
 $sliding-menu-background-hover: $base-accent-color;
 $sliding-menu-color-hover: #fff;
+$footer-background: desaturate(darken($base-accent-color, 20), 30);
 
 .main-section {
 
   .sliding-menu-button {
-    @include button(simple, $base-background-color);
+    @include button(simple, $footer-background);
     @include inline-block;
     cursor: pointer;
+    font-family: $serif;
     font-size: $base-font-size;
+    border-bottom: 0.25em solid darken($footer-background, 6);
+    border-right: 0.25em solid darken($footer-background, 6);
+    border-left: 0.25em solid darken($footer-background, 6);
     margin-bottom: 5em;
     margin-left: auto;
     margin-right: auto;
@@ -19,11 +24,9 @@ $sliding-menu-color-hover: #fff;
     position: relative;
     outline: none;
     text-align: center;
-    top: 0;
-    right: 0;
+    line-height: 0em;
 
-    img {
-      height: 1.3em;
+    p {
     }
   }
 
