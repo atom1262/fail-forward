@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   respond_to :html
 
   def index
+    @posts = Post.all
     @user_posts = current_user.posts
     @recent_posts = Post.all.recent
     @industry_posts = current_user.industry.posts
