@@ -3,13 +3,6 @@
   @include clearfix;
   height: 100%;
 
-  img {
-    display: inline;
-    border: 5px solid $ubuntu-purple;
-    outline-color: $ubuntu-orange;
-    outline-style: solid;
-    margin: 1em auto 1em auto;
-  }
   .user-information {
     display: inline;
     margin: 1em auto 1em auto;
