@@ -1,4 +1,8 @@
 .main-section {
   @include clearfix;
   @include outer-container;
+
+  h2 {
+    text-align: center;
+  }
 }
